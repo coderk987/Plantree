@@ -37,7 +37,7 @@
 		}
 	}
 
-	let q = query(collection(db, 'submits'), orderBy('ctr', 'desc'));
+	let q = query(collection(db, 'submits'), orderBy('ctr'));
 	let list = [];
 	const unsubscribe = onSnapshot(q, (querySnapshot) => {
 		let fb = [];
