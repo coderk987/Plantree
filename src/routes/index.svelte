@@ -35,6 +35,7 @@
 				ctr: 1
 			});
 		}
+		show = false;
 	}
 
 	let q = query(collection(db, 'submits'), orderBy('ctr'));
@@ -101,7 +102,9 @@
 				{#each list as e, i}
 					<div class="item">
 						<div class="info">
-							<h2 class="rank">{i + 1}</h2>
+							<h2 class="rank" class:gold={i == 0} class:silv={i == 1} class:bronz={i == 2}>
+								{i + 1}
+							</h2>
 							<div class="profile">
 								<img src={e.img} alt="" srcset="" />
 								<div class="txt">
@@ -339,5 +342,14 @@
 		height: 15px;
 		background-color: #00ad6b;
 		border-radius: 5px;
+	}
+	.gold {
+		color: #f9d71c;
+	}
+	.silv {
+		color: #b8b4b4;
+	}
+	.bronz {
+		color: #b08d57;
 	}
 </style>
